@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang=”pt-BR”>
+<head>
+<meta charset=”UTF-8” />
+<title>Page Title</title>
+<style>label{display:block;}</style>
+ <!-- O arquivo cpf.js contém a função validaCPF, que
+7 recebe uma string e retorna true ou false. -->
+<script src=”cpf.js”></script>
+<script>
+    function vCPF(i){
+         i.setCustomValidity(validaCPF(i.value)?’’:’CPF inválido!’)
+    }
+</script>
+</head>
+
+<body>
+    <form>
+        <label>nome: <input name=”nome” required></label>
+        <label>email: <input name=”email” type="email" required></label>
+        <label>CPF: <input name=”cpf” oninput=”vCPF(this)” /></label>
+        <label>mensagem: <textarea name=”mensagem” required></textarea></label>
+        <input type="button" name=”action” value=Salvar rascunho” formnovalidate>
+        <input type="button" name=”action” value=Enviar>
+    </form>
+</body>
+</html>
